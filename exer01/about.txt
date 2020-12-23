@@ -1,0 +1,6 @@
+
+about:
+
+- Escolhe um valor máximo
+- Clica no botão para adicionar esse valor
+- Randomiza automaticamente um valor até o máximo
