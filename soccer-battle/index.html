@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue Basics</title>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="https://unpkg.com/vue@next" defer></script>
+        <script src="app.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Soccer Game</h1>
+        </header>
+        
+        <div id="game">
+            <section v-if="game">
+                <section id="monster" class="container">
+                    <h2>Player 1 Overall ({{ player1overall }})</h2>
+                    <div class="healthbar">
+                        <div class="healthbar__value" :style="player1BarStyles"></div>
+                    </div>
+                </section>
+
+                <section id="player" class="container">
+                    <h2>Player 2 Overall ({{ player2overall }})</h2>
+                    <div class="healthbar">
+                        <div class="healthbar__value" :style="player2BarStyles"></div>
+                    </div>
+                </section>
+
+                <section class="container" v-if="overallWinner">
+                    <h2>The Game is Over!</h2>
+                    <h3>{{ overallWinner }}</h3>
+                    <button @click="restartGame">Start New Game</button>
+                </section>
+
+                <section id="controls" v-else>
+                    <button @click="playGame">PLAY</button>
+                </section>
+
+                <section id="log" class="container">
+                    <h2>Game Log ({{ currentRound }})</h2>
+                    <h2>{{ player1wins }} x {{ player2wins }}</h2>
+                    <ul>
+                        <li v-for="logMessage in logMessages">
+                            <span
+                                :class="{'log--player': logMessage.actionBy === 'Player 1', 'log--monster': logMessage.actionBy === 'Player 2'}">
+                                {{ logMessage.actionBy === 'Player 1' ? 'Player 1' : 'Player 2' }}
+                            </span>
+                            <span v-else>
+                            -
+                            <span class="log--damage">{{ logMessage.actionValue }}</span>
+                            </span>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section v-else="game">
+                <section class="container">
+                    
+                    <h3>Player 1 Overall</h3>
+                    <input type="text" v-on:input="addPlayer1Overall" :value="player1overall" /><br>
+                    
+                    <h3>Player 2 Overall</h3>
+                    <input type="text" v-on:input="addPlayer2Overall" :value="player2overall" /><br>
+                    
+                    <button @click="startGame">Start New Game</button>
+                </section>
+            </section>
+        </div>
+    </body>
+</html>
