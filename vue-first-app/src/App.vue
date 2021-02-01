@@ -6,11 +6,13 @@
                 name="Manuel Otto" 
                 phone-number="0123456789" 
                 email-address="manuel@email.com"
+                is-favorite="1"
             ></friend-contact>
             <friend-contact
                 name="Julie Toot" 
                 phone-number="9876543210" 
                 email-address="julie@email.com"
+                is-favorite="0"
             ></friend-contact>
         </ul>
     </section>

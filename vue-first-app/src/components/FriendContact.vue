@@ -1,6 +1,6 @@
 <template>
     <li>
-        <h2>{{ name }}</h2>
+        <h2>{{ name }} {{ isFavorite === '1' ? '(Favorite)' : '' }}</h2>
         <button @click="toggleDetails">{{ detailsAreVisible ? 'Hide' : 'Show' }} Details </button>
         <ul v-if="detailsAreVisible">
             <li><strong>Phone: </strong>{{ phoneNumber }}</li>
@@ -14,7 +14,8 @@
         props: [
             'name',
             'phoneNumber',
-            'emailAddress'
+            'emailAddress',
+            "isFavorite"
         ],
         data() {
             return {
