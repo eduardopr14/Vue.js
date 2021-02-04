@@ -5,10 +5,12 @@
             <friend-contact
                 v-for="friend in friends"
                 :key="friend.id"
+                :id="friend.id"
                 :name="friend.name" 
                 :phone-number="friend.phone" 
                 :email-address="friend.email"
-                :is-favorite="true"
+                :is-favorite="friend.isFavorite"
+                @toggle-favorite="toggleFavoriteStatus"
             ></friend-contact>
         </ul>
     </section>
@@ -25,19 +27,26 @@ import FriendContact from './components/FriendContact.vue';
                         id: 'Manuel',
                         name: 'Manuel Otto',
                         phone: '0123456789',
-                        email: 'manuel@email.com'
+                        email: 'manuel@email.com',
+                        isFavorite: true
                     },
                     {
                         id: 'Julie',
                         name: 'Julie Toot',
                         phone: '9876543210',
-                        email: 'julie@email.com'
+                        email: 'julie@email.com',
+                        isFavorite: false
                     }
                 ]
             };
         },
         methods: {
-
+          toggleFavoriteStatus(friendId) {
+            const identifiedFriend = this.friends.find(
+              (friend) => friend.id === friendId
+            );
+            identifiedFriend.isFavorite = !identifiedFriend.isFavorite;
+          }
         }
     };
 </script>
