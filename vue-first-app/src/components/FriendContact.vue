@@ -7,6 +7,7 @@
             <li><strong>Phone: </strong>{{ phoneNumber }}</li>
             <li><strong>Email: </strong>{{ emailAddress }}</li>
         </ul>
+        <button @click="$emit('delete', id)">Delete</button>
     </li>
 </template>
 
@@ -20,6 +21,17 @@
             emailAddress: {type: String, required: true},
             isFavorite: {type: Boolean, required: false}
         },
+        emits: ['toggle-favorite', 'delete'],
+        // {
+        //     'toggle-favorite': function(id) {
+        //         if (id) {
+        //             return true;
+        //         } else {
+        //             console.warn('Id is missing!');
+        //             return false;
+        //         }
+        //     }
+        // },
         data() {
             return {
                 detailsAreVisible: false
