@@ -1,3 +1,4 @@
+<!-- Main app -->
 <template>
     <section>
         <header><h1>User List</h1></header>

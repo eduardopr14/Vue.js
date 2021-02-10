@@ -1,3 +1,4 @@
+<!-- Form to create a new user -->
 <template>
     <form @submit.prevent="submitData">
         <div>

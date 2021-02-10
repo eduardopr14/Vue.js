@@ -1,3 +1,4 @@
+<!-- Show user information -->
 <template>
     <li>
         <h2>{{ username }}</h2>
