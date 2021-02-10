@@ -23,6 +23,7 @@
         components: { ActiveUser },
         data() {
             return {
+              // Default users
                 users: [
                     {
                         id: 'Max',
@@ -38,6 +39,7 @@
             };
         },
         methods: {
+            // Add new user
             addUser(username, age) {
                 const newUser = {
                     id: new Date().toISOString(),
@@ -46,6 +48,7 @@
                 };
                 this.users.push(newUser);
             },
+            // Delete existing user
             deleteUser(userId) {
                 this.users = this.users.filter((user) => user.id !== userId);
             }
