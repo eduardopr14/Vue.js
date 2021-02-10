@@ -20,11 +20,13 @@
         emits: ['add-user'],
         data() {
             return {
+                // v-model variables of inputs username and age
                 enteredUsername: '',
                 enteredAge: '',
             };
         },
         methods: {
+            // Submiting inputed data
             submitData() {
                 this.$emit('add-user', this.enteredUsername, this.enteredAge);
             }
