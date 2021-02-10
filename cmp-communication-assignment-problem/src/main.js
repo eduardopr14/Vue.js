@@ -5,10 +5,13 @@ import UserData from './components/UserData.vue';
 
 const app = createApp(App);
 
-app.component('active-user', ActiveUser);
-app.component('user-data', UserData);
+// Call the basic components and create a new html tag for them
+app.component('active-user', ActiveUser); // active-user is the new tag name, from the <template> tag in ActiveUser.vue file
+app.component('user-data', UserData); // user-data is the new tag name, from the <template> tag in UserData.vue file
 
 app.mount('#app');
+
+// Activities Tasks
 
 // Task 1: 
 // Add two components to the app: 
