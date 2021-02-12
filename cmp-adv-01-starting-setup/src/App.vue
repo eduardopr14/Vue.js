@@ -12,10 +12,14 @@
 
 <script>
 import TheHeader from './components/TheHeader.vue';
+import BadgeList from './components/BadgeList.vue';
+import UserInfo from './components/UserInfo.vue';
 
 export default {
   components: {
-    TheHeader
+    TheHeader,
+    BadgeList,
+    UserInfo
     // 'the-header': TheHeader
     // Pode ser escrito como TheHeader: TheHeader e ser utilizado com a tag <TheHeader /> ou <the-header>
     // Pode ser escrito apenas como TheHeader, sendo interpretado automaticamente como mostrado na linha de cima
