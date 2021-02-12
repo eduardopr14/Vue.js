@@ -14,7 +14,10 @@ export default {
 };
 </script>
 
-<style>
+<!-- <style> afeta todos os componentes, não só os de UserInfo -->
+<!-- <style scoped> afeta apenas os componentes de UserInfo -->
+
+<style scoped>
 section {
   margin: 2rem auto;
   max-width: 30rem;
