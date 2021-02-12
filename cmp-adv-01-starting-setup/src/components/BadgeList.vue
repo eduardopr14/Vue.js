@@ -1,7 +1,7 @@
 <template>
   <section>
     <base-card>
-      <template v-slot:header>
+      <template v-slot:header> <!-- v-slot:header é igual a #header -->
         <h2>Available Badges</h2>
       </template>
       <template v-slot:default>

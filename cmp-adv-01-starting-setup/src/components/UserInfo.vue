@@ -20,11 +20,3 @@ export default {
 
 <!-- <style> afeta todos os componentes, não só os de UserInfo -->
 <!-- <style scoped> afeta apenas os componentes de UserInfo -->
-
-<style scoped>
-section header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-</style>
