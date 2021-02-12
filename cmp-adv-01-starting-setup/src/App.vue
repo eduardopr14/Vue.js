@@ -15,8 +15,10 @@ import TheHeader from './components/TheHeader.vue';
 
 export default {
   components: {
-    'the-header': TheHeader
-    // Pode ser escrito como TheHeader: TheHeader e ser utilizado com a tag <TheHeader />
+    TheHeader
+    // 'the-header': TheHeader
+    // Pode ser escrito como TheHeader: TheHeader e ser utilizado com a tag <TheHeader /> ou <the-header>
+    // Pode ser escrito apenas como TheHeader, sendo interpretado automaticamente como mostrado na linha de cima
   },
   data() {
     return {
