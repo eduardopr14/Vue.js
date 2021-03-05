@@ -11,10 +11,14 @@
 
 <script>
 import axios from 'axios';
-import pokemon from './components/Pokemon';
+import Pokemon from './components/Pokemon';
 
 export default {
   name: 'App',
+
+  components: {
+    Pokemon,
+  },
 
   data() {
     return {
@@ -26,9 +30,6 @@ export default {
     axios.get("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0").then(res => {
       this.pokemons = res.data.results; // Inserindo os dados dentro de um array
     })
-  },
-  components: {
-    pokemon
   },
   computed: {
     searchResult: function() {
