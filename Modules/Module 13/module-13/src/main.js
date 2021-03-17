@@ -22,6 +22,7 @@ const router = createRouter({
             ]
         }, // alias: '/'
         { path: '/users', components: {
+            // 1 default - 1 named component -> App.vue (default and footer)
             default: UsersList, footer: UsersFooter
         } },
         { path: '/:notFount(.*)', component: NotFound },
