@@ -21,10 +21,18 @@ const router = createRouter({
                 { name: 'team-members', path: ':teamId', component: TeamMembers, props: true }
             ]
         }, // alias: '/'
-        { path: '/users', components: {
-            // 1 default - 1 named component -> App.vue (default and footer)
-            default: UsersList, footer: UsersFooter
-        } },
+        { 
+            path: '/users', 
+            components: {
+                // 1 default - 1 named component -> App.vue (default and footer)
+                default: UsersList, footer: UsersFooter
+            },
+            beforeEnter(to, from, next) {
+                console.log('users beforeEnter');
+                console.log(to, from);
+                next();
+            }
+        },
         { path: '/:notFount(.*)', component: NotFound },
     ],
     linkActiveClass: 'active',
